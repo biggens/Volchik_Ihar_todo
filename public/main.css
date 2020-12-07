@@ -1,89 +1,167 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+    background: linear-gradient(to bottom, rgba(65, 1, 84, 1), #999);
+    /*height: 100vh;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  background-size: 100% auto;
+    font-family: Oswald, sans-serif;
+}
+
+h1 {
+    color: white;
+  margin: 0;
+
 }
 
 #root {
-  width: 100%;
+    /*margin-top: 100px;*/
+    width: 100%;
 }
 
 #app-container {
-  width: 70%;
-  margin: auto;
+    width: 70%;
+    margin: auto;
 }
 
 .editor-form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-row-left {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .form-row-right {
-  float: right;
-  margin-bottom: 10px;
+    float: right;
+    margin-bottom: 10px;
+}
+
+#add-todo-button, #clear-form-button {
+    display: inline-block;
+    width: 50px;
+    font-size: 80%;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.1;
+    padding: 8px 0;
+    outline: none;
+    border: 1px solid;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 6px;
+    background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 50%, #378bce);
+    box-shadow: inset rgba(255, 255, 255, .5) 1px 1px;
+}
+
+#add-todo-button:hover, #clear-form-button:hover {
+    background: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
+}
+
+#add-todo-button:active, #clear-form-button:active {
+    border-color: #2970a9;
+    background: linear-gradient(#5796c8, #6aa2ce);
+    box-shadow: none;
 }
 
 #todo-text {
-  width: 100%;
+    width: 100%;
+}
+
+#todo-counter, .list-filter-container, .item, .empty-list {
+  color: #fff;
 }
 
 .item {
-  border: 1px dotted gray;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-bottom: 10px;
+    /*border: 1px dotted gray;*/
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
 }
 
 .item > h3 {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .info-block {
-  display: flex;
+    display: flex;
 }
 
 .status-panel {
-  flex-grow: 4;
+    flex-grow: 4;
 }
 
 .created-date-panel {
-  flex-grow: 1;
-  text-align: right;
+    flex-grow: 1;
+    text-align: right;
 }
 
 .done-date-panel {
-  flex-grow: 1;
-  text-align: right;
+    flex-grow: 1;
+    text-align: right;
 }
 
 .control-block {
-  text-align: right;
+    text-align: right;
 }
 
-.view-button {
-  width: 125px;
-  color: aquamarine;
+
+.view-button, .postpone-button, .delete-button, .done-button, .resume-button {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    width: 125px;
+    height: 32px;
+    line-height: 1.1;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #777;
+    outline: none;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 5px;
+    background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 50%, #378bce);
 }
 
-.postpone-button {
-  width: 125px;
-  color: orange;
+.view-button:hover, .postpone-button:hover, .delete-button:hover, .done-button:hover, .resume-button:hover {
+    background: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
 }
 
-.resume-button {
-  width: 125px;
-  color: green;
+.view-button:hover {
+    color: aquamarine;
 }
 
-.delete-button {
-  width: 125px;
-  color: red;
+.postpone-button:hover {
+    color: orange;
 }
 
-.done-button {
-  width: 125px;
-  color: blue;
+.resume-button:hover {
+    color: green;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+.done-button:hover {
+    color: blue;
+}
+
+.view-button:active, .postpone-button:active, .delete-button:active, .done-button:active, .resume-button:active {
+    color: #fff;
+    background: linear-gradient(#5796c8, #6aa2ce);
+    box-shadow: none;
 }
